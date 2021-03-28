@@ -6,5 +6,5 @@ urlpatterns = [
     path('login/', obtain_auth_token, name='api_token_auth'),
     path('signUp/', views.signUp, name='Registration'),
     path('logout/',views.logout,name="LogOut"),
-    path('/',views.notfound)
+
 ]

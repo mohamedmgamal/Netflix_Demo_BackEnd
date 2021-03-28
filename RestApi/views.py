@@ -37,3 +37,7 @@ def logout(request):
         return Response(data={
                     "Error": Exception
                 }, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(["POST","GET","PUT"])
+def notfound(request):
+    return HttpResponse("404")

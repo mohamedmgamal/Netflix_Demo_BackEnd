@@ -81,14 +81,27 @@ WSGI_APPLICATION = 'Netflix_Demo_BackEnd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':'Netflix',
+#         'USER': 'postgres',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'Netflix',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'NAME':'dcj5pi64m744bl',
+        'USER': 'tqyuqmdfvunery',
+        'PASSWORD': 'e9b9b53af8933d9063deb9542e3e7f14983b8bbd96c9a622b5003cd0690fd4d1',
+        'HOST': 'ec2-54-155-208-5.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
+        'URI': 'postgres://tqyuqmdfvunery:e9b9b53af8933d9063deb9542e3e7f14983b8bbd96c9a622b5003cd0690fd4d1@ec2-54-155-208-5.eu-west-1.compute.amazonaws.com:5432/dcj5pi64m744bl',
+        'Heroku CLI': 'heroku pg:psql postgresql-flexible-90856 --app netflix-demo-iti'
     }
 }
 

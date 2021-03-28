@@ -25,7 +25,7 @@ SECRET_KEY = 'x*ybgk^36x0$k-i9@qxpp=jj5$*+0&ntfdyt93yxg_s%42_&om'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["netflix-demo-iti.herokuapp.com/","127.0.0.1:8000/"]
+ALLOWED_HOSTS = ["netflix-demo-iti.herokuapp.com","127.0.0.1"]
 
 
 # Application definition

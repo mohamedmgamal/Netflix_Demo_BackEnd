@@ -1,3 +1,5 @@
+import json
+
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -112,7 +114,7 @@ def getId(request,username):
     try:
      user=User.objects.all().filter(username=username)
      return Response(data={"success:":True,
-                         "id:":user}, status=status.HTTP_200_OK)
+                         "user:":json.loads(user)}, status=status.HTTP_200_OK)
     except NameError:
         return Response(data={"success:": False,
                               "error:": NameError}, status=status.HTTP_400_BAD_REQUEST)

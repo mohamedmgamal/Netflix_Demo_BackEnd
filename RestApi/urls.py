@@ -12,5 +12,6 @@ urlpatterns = [
     path('getEp/<int:show>/<int:user>/', views.getEpisodes),
     path('like/<int:show>', views.likes),
     path('disLike/<int:show>', views.disLikes),
-    path('history/<int:user>',views.getHistory)
+    path('history/<int:user>',views.getHistory),
+    path('getId/<str:username>',views.getId)
 ]

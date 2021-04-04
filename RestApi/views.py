@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from RestApi.serializer import UserSerializer,PaymentsSerializer,ShowsSerializer,EpisodeSerializer,HistorySerializer
-from .models import Shows, Episode,History
+from .models import Shows, Episode,History,User
 
 
 @api_view(["POST"])
@@ -106,3 +106,13 @@ def getHistory(request,user):
    shows=History.objects.all().order_by("-date").filter(user__id=user)
    response = HistorySerializer(instance=shows, many=True)
    return Response(data=response.data, status=status.HTTP_200_OK)
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def getId(request,username):
+    try:
+     user=User.objects.all().filter(user_username=username)
+     return Response(data={"success:":True,
+                         "id:":user.id}, status=status.HTTP_200_OK)
+    except NameError:
+        return Response(data={"success:": False,
+                              "error:": NameError}, status=status.HTTP_400_BAD_REQUEST)

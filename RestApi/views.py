@@ -112,10 +112,10 @@ def getHistory(request,user):
 @permission_classes([IsAuthenticated])
 def getId(request,username):
     try:
-     user=User.objects.all().filter(username=username)
-     print(user)
+     id=User.objects.get(username=username).pk
+
      return Response(data={"success:":True,
-                         "user:":user.id} ,status=status.HTTP_200_OK)
+                         "user:":id} ,status=status.HTTP_200_OK)
     except NameError:
         return Response(data={"success:": False,
                               "error:": NameError}, status=status.HTTP_400_BAD_REQUEST)

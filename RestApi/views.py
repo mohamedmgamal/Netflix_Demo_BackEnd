@@ -110,7 +110,7 @@ def getHistory(request,user):
 @permission_classes([IsAuthenticated])
 def getId(request,username):
     try:
-     user=User.objects.all().filter(user_username=username)
+     user=User.objects.all().filter(username=username)
      return Response(data={"success:":True,
                          "id:":user.id}, status=status.HTTP_200_OK)
     except NameError:

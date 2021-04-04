@@ -113,8 +113,9 @@ def getHistory(request,user):
 def getId(request,username):
     try:
      user=User.objects.all().filter(username=username)
+     print(user)
      return Response(data={"success:":True,
-                         "user:":json.loads(user)}, status=status.HTTP_200_OK)
+                         "user:":user.id} ,status=status.HTTP_200_OK)
     except NameError:
         return Response(data={"success:": False,
                               "error:": NameError}, status=status.HTTP_400_BAD_REQUEST)

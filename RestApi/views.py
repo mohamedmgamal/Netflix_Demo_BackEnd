@@ -115,7 +115,7 @@ def getId(request,username):
      id=User.objects.get(username=username).pk
 
      return Response(data={"success:":True,
-                         "user:":id} ,status=status.HTTP_200_OK)
+                         "id:":id} ,status=status.HTTP_200_OK)
     except NameError:
         return Response(data={"success:": False,
                               "error:": NameError}, status=status.HTTP_400_BAD_REQUEST)

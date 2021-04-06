@@ -113,11 +113,11 @@ def getId(request,username):
     try:
      id=User.objects.get(username=username).pk
 
-     return Response(data={"success:":True,
-                         "id:":id} ,status=status.HTTP_200_OK)
+     return Response(data={"success":True,
+                         "id":id} ,status=status.HTTP_200_OK)
     except NameError:
-        return Response(data={"success:": False,
-                              "error:": NameError}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={"success": False,
+                              "error": NameError}, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(["GET"])
 def ifUserName(request,username):

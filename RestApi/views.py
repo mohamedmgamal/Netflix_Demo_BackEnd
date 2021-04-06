@@ -109,7 +109,6 @@ def getHistory(request,user):
    response = HistorySerializer(instance=shows, many=True)
    return Response(data=response.data, status=status.HTTP_200_OK)
 @api_view(["GET"])
-@permission_classes([IsAuthenticated])
 def getId(request,username):
     try:
      id=User.objects.get(username=username).pk

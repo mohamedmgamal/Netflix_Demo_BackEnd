@@ -13,5 +13,6 @@ urlpatterns = [
     path('like/<int:show>', views.likes),
     path('disLike/<int:show>', views.disLikes),
     path('history/<int:user>',views.getHistory),
-    path('getId/<str:username>',views.getId)
+    path('getId/<str:username>',views.getId),
+    path('ifun/<str:username>',views.ifUserName,)
 ]

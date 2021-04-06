@@ -101,7 +101,7 @@ def disLikes(request,show):
         return Response(data={"success :":True,
                               "Massage":"disliked"}, status=status.HTTP_200_OK)
     return Response(data={"success :": False,
-                          "Error": "Cant find show"}, status=status.HTTP_400_BAD_REQUEST)
+                          "error": "Cant find show"}, status=status.HTTP_400_BAD_REQUEST)
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def getHistory(request,user):
@@ -119,3 +119,9 @@ def getId(request,username):
     except NameError:
         return Response(data={"success:": False,
                               "error:": NameError}, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(["GET"])
+def ifUserName(request,username):
+   if User.objects.get(username=username):
+       return Response(data={"error":"User found"},status=status.HTTP_400_BAD_REQUEST)
+   return Response(data={"success":True},status=status.HTTP_200_OK)

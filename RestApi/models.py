@@ -1,4 +1,5 @@
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MinValueValidator
 
 from django.db import models
 
@@ -41,10 +42,10 @@ class Shows(models.Model):
     poster=models.URLField(blank=False,null=False)
     bigPoster=models.URLField(blank=True,null=True)
     trailer = models.URLField(blank=True, null=True)
-    likes = models.IntegerField(default=0)
-    disLikes= models.IntegerField(default=0)
+    likes = models.PositiveIntegerField(default=0,validators=[MinValueValidator(0)])
+    disLikes= models.PositiveIntegerField(default=0,validators=[MinValueValidator(0)])
     publishDate=models.DateField(blank=True,null=True)
-    views=models.IntegerField(default=0)
+    views=models.PositiveIntegerField(default=0,validators=[MinValueValidator(0)])
     Description=models.TextField(blank=True,null=True)
     Actors=models.ManyToManyField(Actors)
     Categories=models.ManyToManyField(Categories)

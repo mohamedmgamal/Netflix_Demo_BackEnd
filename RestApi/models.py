@@ -19,8 +19,6 @@ class Payments(models.Model):
     expired_date = models.DateField(blank=False, null=False)
     payment_date   = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    class Meta:
-        ordering = ('payment_date','user')
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name} in {self.payment_date}'
 

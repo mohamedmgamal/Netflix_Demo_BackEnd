@@ -49,7 +49,7 @@ class Shows(models.Model):
     Categories=models.ManyToManyField(Categories)
 
     class Meta:
-        ordering     = (['publishDate',])
+        ordering     = (['publishDate','name'])
     def __str__(self):
         return self.name
 
@@ -73,3 +73,5 @@ class History(models.Model):
     show =models.ForeignKey(Shows,on_delete=models.CASCADE)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     date=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return f'{self.user.username} watched {self.show.name} at {self.date}'

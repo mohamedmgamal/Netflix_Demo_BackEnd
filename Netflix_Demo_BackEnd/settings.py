@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['netflix-clone-iti.herokuapp.com','127.0.0.1']
 
 # Application definition
 
-INSTALLED_APPS = ['RestApi',
+INSTALLED_APPS = ['RestApi.apps.RestApiconfig',
     'rest_framework.authtoken',
     'rest_framework',
     'django.contrib.admin',
@@ -145,3 +145,8 @@ USE_TZ = True
 STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
 AUTH_USER_MODEL = "RestApi.User"
 STATIC_URL = '/static/'
+EMAIL_HOST_USER = "NetflixDemoITI@gmail.com"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = "mg@123456789"

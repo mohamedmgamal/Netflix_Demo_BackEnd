@@ -33,7 +33,7 @@ class Categories(models.Model):
         return self.name
 
 class Shows(models.Model):
-    name = models.CharField(blank=False, null=False, max_length=255)
+    name = models.CharField(blank=False, null=False, max_length=255,unique=True)
     maturity_rating  = models.CharField(blank=False, null=False, max_length=3)
     Language = models.CharField(blank=False, null=False, max_length=16)
     Country =models.CharField(blank=False, null=False, max_length=16)
